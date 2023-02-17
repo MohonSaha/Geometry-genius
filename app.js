@@ -28,11 +28,9 @@ document.getElementById('rectangle-btn').addEventListener('click', function () {
 document.getElementById('parallelogram-btn').addEventListener('click', function () {
     serial = serial + 1; 
     const firstValue = getInputValue('parallelogram-base');
-    const secondValue = getInputValue('parallelogram-height');
-    
+    const secondValue = getInputValue('parallelogram-height'); 
     const name = getInnerTextValue('parallelogram-title');;
-    const area = parseInt(firstValue) * parseInt(secondValue);
-   
+    const area = parseInt(firstValue) * parseInt(secondValue); 
     validation(firstValue, secondValue,serial, name, area);
     
     clearInputField('parallelogram-base');
@@ -43,14 +41,17 @@ document.getElementById('parallelogram-btn').addEventListener('click', function 
 
 
 function validation(firstValue, secondValue,serial, name, area){
+    const firstValueType = parseInt(firstValue);
+    const secondValueType = parseInt(secondValue);
     if(firstValue == '' || 
     secondValue == '' ||
     firstValue <= 0 ||
-    secondValue <= 0 ||
-    firstValue === NaN ||
-    secondValue === NaN
-    ){
+    secondValue <= 0)
+    {
         alert("Please enter currect value")
+    }
+    else if(isNaN(firstValueType) || isNaN(secondValueType)){
+        alert("Please enter number not string !!!")
     }
     else{
     displayData(serial, name, area)
