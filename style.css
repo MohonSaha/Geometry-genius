@@ -46,3 +46,31 @@
     height: 70vh;
     padding: 0px 20px;
 }
+
+.main-container{
+    margin-bottom: 30px;
+}
+
+
+
+
+/* Responsive grid for mobile devices  */
+
+@media screen and (max-width:576px) {
+
+    .main-container{
+        grid-template-columns: 1fr;
+        
+    }
+
+    .custom-container{
+        margin: 0px 30px;
+    }
+
+    .calculator-area{
+        margin-bottom: 50px;
+    }
+}
+
+
+
