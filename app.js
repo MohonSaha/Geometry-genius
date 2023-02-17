@@ -2,45 +2,64 @@ let serial = 0;
 
 // For triangle 
 document.getElementById('triangle-btn').addEventListener('click', function () {
-    serial = serial + 1; 
-    const triangleSide = getInputValue('triangle-side');
-    const triangleHeight = getInputValue('triangle-height');
+    const firstValue = getInputValue('triangle-side');
+    const secondValue = getInputValue('triangle-height'); 
     const name = getInnerTextValue('triangle-title');;
-    const area = triangleHeight * triangleSide * 0.5;
-    displayData(serial, name, area)
+    const area = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    validation(firstValue, secondValue, name, area);
+    
     clearInputField('triangle-side');
     clearInputField('triangle-height');
 })
 
+
 // For rectangle
 document.getElementById('rectangle-btn').addEventListener('click', function () {
-    serial = serial + 1; 
-    const rectangleWidth = getInputValue('rectangle-width');
-    const rectangleHeight = getInputValue('rectangle-height');
+    const firstValue = getInputValue('rectangle-width');
+    const secondValue = getInputValue('rectangle-height'); 
     const name = getInnerTextValue('rectangle-title');;
-    const area = rectangleHeight * rectangleWidth;
-    displayData(serial, name, area)
+    const area = parseInt(firstValue) * parseInt(secondValue); 
+    validation(firstValue, secondValue, name, area);
+    
     clearInputField('rectangle-width');
     clearInputField('rectangle-height');
 })
 
-// For rectangle
+// For Parallelogram
+
 document.getElementById('parallelogram-btn').addEventListener('click', function () {
-    serial = serial + 1; 
     const firstValue = getInputValue('parallelogram-base');
     const secondValue = getInputValue('parallelogram-height'); 
     const name = getInnerTextValue('parallelogram-title');;
     const area = parseInt(firstValue) * parseInt(secondValue); 
-    validation(firstValue, secondValue,serial, name, area);
+    validation(firstValue, secondValue, name, area);
     
     clearInputField('parallelogram-base');
     clearInputField('parallelogram-height');
 })
 
 
+// For Rhombus
+
+document.getElementById('rhombus-btn').addEventListener('click', function () {
+    
+    const firstValue = getInputValue('first-diagonal');
+    const secondValue = getInputValue('second-diagonal'); 
+    const name = getInnerTextValue('rhombus-title');;
+    const area = parseInt(firstValue) * parseInt(secondValue); 
+    validation(firstValue, secondValue, name, area);
+    
+    clearInputField('first-diagonal');
+    clearInputField('second-diagonal');
+})
 
 
-function validation(firstValue, secondValue,serial, name, area){
+
+
+
+
+// Function for validation
+function validation(firstValue, secondValue, name, area){
     const firstValueType = parseInt(firstValue);
     const secondValueType = parseInt(secondValue);
     if(firstValue == '' || 
@@ -54,7 +73,9 @@ function validation(firstValue, secondValue,serial, name, area){
         alert("Please enter number not string !!!")
     }
     else{
-    displayData(serial, name, area)
+        serial = serial + 1; 
+    displayData(serial, name, area);
+    console.log(serial, name, area);
     }
 }
 
