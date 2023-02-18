@@ -67,9 +67,6 @@ document.getElementById('rhombus-btn').addEventListener('click', function () {
 
 
 
-
-
-
 // Function for validation
 function validation(firstValue, secondValue, name, area){
     const firstValueType = parseInt(firstValue);
@@ -89,8 +86,6 @@ function validation(firstValue, secondValue, name, area){
     displayData(serial, name, area);
     }
 }
-
-
 
 
 // Function to clear value in input field
@@ -116,12 +111,14 @@ function getInnerTextValue(id){
 // function to create new html in web page
 function displayData(serial, name, area) {
     const container = document.getElementById('table-container')
-    const cmArea = area + "cm²"
     const tr = document.createElement("tr");
     tr.innerHTML = `
             <td>${serial}</td>
             <td>${name}</td>
-            <td>${cmArea}</td>
+            <td>
+             <span>${area}<span>
+             <span>cm<sup>2</sup></span>
+            </td>
             <td>
             <button id = "dextop-btn" class="btn btn-primary p-0 px-2">Covert to m²</button>
             </td>   
@@ -131,10 +128,7 @@ function displayData(serial, name, area) {
     container.appendChild(tr);
 }
 
-
-
-
-    
+// Function to set random background color 
 function randomBgColor(cardId) {
     const card = document.getElementById(cardId);
         var x = Math.floor(Math.random() * 256);
