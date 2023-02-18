@@ -1,3 +1,13 @@
+
+// Dynamic Blog Button 
+document.getElementById('blog-btn').addEventListener('click', function(e){
+    window.location.href = './Blogs/blogs.html';
+})
+
+
+
+
+
 let serial = 0;
 
 // For triangle 
@@ -5,7 +15,8 @@ document.getElementById('triangle-btn').addEventListener('click', function () {
     const firstValue = getInputValue('triangle-side');
     const secondValue = getInputValue('triangle-height'); 
     const name = getInnerTextValue('triangle-title');;
-    const area = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const area = areaTotal.toFixed(2);
     validation(firstValue, secondValue, name, area);
     
     clearInputField('triangle-side');
@@ -18,7 +29,8 @@ document.getElementById('rectangle-btn').addEventListener('click', function () {
     const firstValue = getInputValue('rectangle-width');
     const secondValue = getInputValue('rectangle-height'); 
     const name = getInnerTextValue('rectangle-title');;
-    const area = parseInt(firstValue) * parseInt(secondValue); 
+    const areaTotal = parseInt(firstValue) * parseInt(secondValue); 
+    const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
     clearInputField('rectangle-width');
@@ -31,7 +43,8 @@ document.getElementById('parallelogram-btn').addEventListener('click', function 
     const firstValue = getInputValue('parallelogram-base');
     const secondValue = getInputValue('parallelogram-height'); 
     const name = getInnerTextValue('parallelogram-title');;
-    const area = parseInt(firstValue) * parseInt(secondValue); 
+    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
     clearInputField('parallelogram-base');
@@ -46,7 +59,8 @@ document.getElementById('rhombus-btn').addEventListener('click', function () {
     const firstValue = getInputValue('first-diagonal');
     const secondValue = getInputValue('second-diagonal'); 
     const name = getInnerTextValue('rhombus-title');;
-    const area = parseInt(firstValue) * parseInt(secondValue); 
+    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
     clearInputField('first-diagonal');
@@ -112,7 +126,9 @@ function displayData(serial, name, area) {
             <td>${name}</td>
             <td>${cmArea}</td>
             <td>
-            <button class="btn btn-primary p-0 px-2">Covert to m²</button>
+            <button id = "dextop-btn" class="btn btn-primary p-0 px-2">Covert to m²</button>
+            </td>   
+            <button id = "mobile-btn" class="btn btn-primary bg-primary p-1 px-2">m²</button>
             </td>   
   `;
     container.appendChild(tr);
