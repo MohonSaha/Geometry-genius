@@ -30,7 +30,7 @@
             <div class="card-area mt-5">
                 <div class="row row-cols-1 row-cols-md-3 g-4 ">
                     <div class="col">
-                      <div class="card h-100 p-3">
+                      <div onmouseover="randomBgColor('triangle-card')" id="triangle-card" class="card h-100 p-3">
                         <img src="./images/triangle.png" class="card-img-top w-50 mx-auto h-50" alt="...">
                         <div class="card-body">
                           <h5 id="triangle-title" class="card-title text-center">Triangle</h5>
@@ -46,7 +46,7 @@
                       </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100 p-3">
+                      <div onmouseover="randomBgColor('rectangle-card')" id="rectangle-card" class="card h-100 p-3">
                         <img src="./images/rectangle.png" class="card-img-top w-75 mx-auto" alt="...">
                         <div class="card-body">
                           <h5 id="rectangle-title" class="card-title text-center">Rectangle</h5>
@@ -62,7 +62,7 @@
                       </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100 p-3">
+                      <div onmouseover="randomBgColor('parallelogram-card')" id="parallelogram-card" class="card h-100 p-3">
                         <img src="./images/parallelogram.png" class="card-img-top w-75 mx-auto h-auto" alt="...">
                         <div class="card-body">
                           <h5 id="parallelogram-title" class="card-title text-center">Parallelogram</h5>
@@ -78,7 +78,7 @@
                       </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100 p-3">
+                      <div onmouseover="randomBgColor('rhombus-card')" id="rhombus-card" class="card h-100 p-3">
                         <img src="./images/rhombus.png" class="card-img-top 
                         w-50 mx-auto h-auto" alt="...">
                         <div class="card-body">
@@ -96,7 +96,7 @@
                       </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100 p-3">
+                      <div onmouseover="randomBgColor('pentagon-card')" id="pentagon-card" class="card h-100 p-3">
                         <img src="./images/pentagon.png" class=" pentagon-img card-img-top mx-auto h-auto" alt="...">
                         <div class="card-body">
                           <h5 class="card-title text-center">Pentagon</h5>
@@ -112,14 +112,14 @@
                       </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100 p-3">
+                      <div onmouseover="randomBgColor('ellipse-card')" id="ellipse-card" class="card h-100 p-3">
                         <img src="./images/ellipse.png" class="ellipse-img card-img-top mx-auto h-auto" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Ellipse</h5>
+                          <h5 id="ellipse-title" class="card-title text-center">Ellipse</h5>
                           <p>Area (A) = 𝝅ab</p>
                           <div class="card-input">
-                            <input type="text" placeholder="a"> cm
-                            <input type="text" placeholder="b"> cm
+                            <input id="ellipse-first" type="text" placeholder="a"> cm
+                            <input id="ellipse-second" type="text" placeholder="b"> cm
                           </div>
                         </div>
                         <div class="">

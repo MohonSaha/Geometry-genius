@@ -5,13 +5,11 @@ document.getElementById('blog-btn').addEventListener('click', function(e){
 })
 
 
-
-
-
 let serial = 0;
 
 // For triangle 
-document.getElementById('triangle-btn').addEventListener('click', function () {
+document.getElementById('triangle-btn').addEventListener('click', function (e) {
+    console.log(e.target.parentNode);
     const firstValue = getInputValue('triangle-side');
     const secondValue = getInputValue('triangle-height'); 
     const name = getInnerTextValue('triangle-title');;
@@ -89,7 +87,6 @@ function validation(firstValue, secondValue, name, area){
     else{
         serial = serial + 1; 
     displayData(serial, name, area);
-    console.log(serial, name, area);
     }
 }
 
@@ -133,3 +130,20 @@ function displayData(serial, name, area) {
   `;
     container.appendChild(tr);
 }
+
+
+
+
+    
+function randomBgColor(cardId) {
+    const card = document.getElementById(cardId);
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+     card.style.background = bgColor;
+        }
+
+
+
+
