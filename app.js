@@ -8,8 +8,7 @@ document.getElementById('blog-btn').addEventListener('click', function(e){
 let serial = 0;
 
 // For triangle 
-document.getElementById('triangle-btn').addEventListener('click', function (e) {
-    console.log(e.target.parentNode);
+document.getElementById('triangle-btn').addEventListener('click', function () {
     const firstValue = getInputValue('triangle-side');
     const secondValue = getInputValue('triangle-height'); 
     const name = getInnerTextValue('triangle-title');;
@@ -19,6 +18,20 @@ document.getElementById('triangle-btn').addEventListener('click', function (e) {
     
     clearInputField('triangle-side');
     clearInputField('triangle-height');
+
+
+    const meterButton = document.querySelectorAll('.meter-btn');
+    for(const button of meterButton){
+        button.addEventListener('click', function(e){
+            const cmArea = e.target.parentNode.parentNode.children[2].children[0].innerText;
+            const meterArea = cmArea / 10000;
+            // console.log(meterArea);
+            e.target.parentNode.parentNode.children[2].children[0].innerText = meterArea;
+        })
+    }
+
+
+
 })
 
 
@@ -115,12 +128,8 @@ function displayData(serial, name, area) {
     tr.innerHTML = `
             <td>${serial}</td>
             <td>${name}</td>
-            <td>
-             <span>${area}<span>
-             <span>cm<sup>2</sup></span>
-            </td>
-            <td>
-            <button id = "dextop-btn" class="btn btn-primary p-0 px-2">Covert to m²</button>
+            <td><span>${area}</span><span>cm²</span><td>
+            <button id = "dextop-btn" class="meter-btn btn btn-primary p-0 px-2">Covert to m²</button>
             </td>   
             <button id = "mobile-btn" class="btn btn-primary bg-primary p-1 px-2">m²</button>
             </td>   
