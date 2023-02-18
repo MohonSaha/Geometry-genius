@@ -19,21 +19,17 @@ document.getElementById('triangle-btn').addEventListener('click', function () {
     clearInputField('triangle-side');
     clearInputField('triangle-height');
 
-
+    // Convert to meter
     const meterButton = document.querySelectorAll('.meter-btn');
     for(const button of meterButton){
         button.addEventListener('click', function(e){
             const cmArea = e.target.parentNode.parentNode.children[2].children[0].innerText;
             const meterArea = cmArea / 10000;
-            // console.log(meterArea);
             e.target.parentNode.parentNode.children[2].children[0].innerText = meterArea;
         })
     }
 
-
-
 })
-
 
 // For rectangle
 document.getElementById('rectangle-btn').addEventListener('click', function () {
@@ -46,6 +42,7 @@ document.getElementById('rectangle-btn').addEventListener('click', function () {
     
     clearInputField('rectangle-width');
     clearInputField('rectangle-height');
+
 })
 
 // For Parallelogram
@@ -78,6 +75,36 @@ document.getElementById('rhombus-btn').addEventListener('click', function () {
     clearInputField('second-diagonal');
 })
 
+// For pentagon
+
+document.getElementById('pentagon-btn').addEventListener('click', function () {
+    
+    const firstValue = getInputValue('first-value');
+    const secondValue = getInputValue('second-value'); 
+    const name = getInnerTextValue('pentagon-title');;
+    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const area = areaTotal.toFixed(2); 
+    validation(firstValue, secondValue, name, area);
+    
+    clearInputField('first-value');
+    clearInputField('second-value');
+})
+
+
+// For ellipse
+
+document.getElementById('ellipse-btn').addEventListener('click', function () {
+    
+    const firstValue = getInputValue('ellipse-first');
+    const secondValue = getInputValue('ellipse-second'); 
+    const name = getInnerTextValue('ellipse-title');;
+    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 3.14; 
+    const area = areaTotal.toFixed(2); 
+    validation(firstValue, secondValue, name, area);
+    
+    clearInputField('ellipse-first');
+    clearInputField('ellipse-second');
+})
 
 
 // Function for validation
