@@ -12,7 +12,7 @@ document.getElementById('triangle-btn').addEventListener('click', function () {
     const firstValue = getInputValue('triangle-side');
     const secondValue = getInputValue('triangle-height'); 
     const name = getInnerTextValue('triangle-title');;
-    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const areaTotal = parseFloat(firstValue) * parseFloat(secondValue) * 0.5; 
     const area = areaTotal.toFixed(2);
     validation(firstValue, secondValue, name, area);
     
@@ -36,7 +36,7 @@ document.getElementById('rectangle-btn').addEventListener('click', function () {
     const firstValue = getInputValue('rectangle-width');
     const secondValue = getInputValue('rectangle-height'); 
     const name = getInnerTextValue('rectangle-title');;
-    const areaTotal = parseInt(firstValue) * parseInt(secondValue); 
+    const areaTotal = parseFloat(firstValue) * parseFloat(secondValue); 
     const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
@@ -51,7 +51,7 @@ document.getElementById('parallelogram-btn').addEventListener('click', function 
     const firstValue = getInputValue('parallelogram-base');
     const secondValue = getInputValue('parallelogram-height'); 
     const name = getInnerTextValue('parallelogram-title');;
-    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const areaTotal = parseFloat(firstValue) * parseFloat(secondValue) * 0.5; 
     const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
@@ -67,7 +67,7 @@ document.getElementById('rhombus-btn').addEventListener('click', function () {
     const firstValue = getInputValue('first-diagonal');
     const secondValue = getInputValue('second-diagonal'); 
     const name = getInnerTextValue('rhombus-title');;
-    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const areaTotal = parseFloat(firstValue) * parseFloat(secondValue) * 0.5; 
     const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
@@ -82,7 +82,7 @@ document.getElementById('pentagon-btn').addEventListener('click', function () {
     const firstValue = getInputValue('first-value');
     const secondValue = getInputValue('second-value'); 
     const name = getInnerTextValue('pentagon-title');;
-    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 0.5; 
+    const areaTotal = parseFloat(firstValue) * parseFloat(secondValue) * 0.5; 
     const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
@@ -98,7 +98,7 @@ document.getElementById('ellipse-btn').addEventListener('click', function () {
     const firstValue = getInputValue('ellipse-first');
     const secondValue = getInputValue('ellipse-second'); 
     const name = getInnerTextValue('ellipse-title');;
-    const areaTotal = parseInt(firstValue) * parseInt(secondValue) * 3.14; 
+    const areaTotal = parseFloat(firstValue) * parseFloat(secondValue) * 3.14; 
     const area = areaTotal.toFixed(2); 
     validation(firstValue, secondValue, name, area);
     
@@ -109,8 +109,8 @@ document.getElementById('ellipse-btn').addEventListener('click', function () {
 
 // Function for validation
 function validation(firstValue, secondValue, name, area){
-    const firstValueType = parseInt(firstValue);
-    const secondValueType = parseInt(secondValue);
+    const firstValueType = parseFloat(firstValue);
+    const secondValueType = parseFloat(secondValue);
     if(firstValue == '' || 
     secondValue == '' ||
     firstValue <= 0 ||
